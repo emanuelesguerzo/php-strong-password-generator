@@ -1,8 +1,12 @@
-<!-- PHP -->
 <?php
-
+    session_start();
     include_once "./functions.php";
 
+    if (isset($_GET["length"])) {
+        $_SESSION["password"] = generatePassword();
+        header("Location: result.php");
+    }
+    
 ?>
 
 <!-- HTML -->
@@ -28,17 +32,6 @@
             <button type="submit">Genera</button>
 
         </form>
-
-        <!-- Result Field -->
-        <div class="result">
-
-            <?php
-                if (isset($_GET["length"])) {
-                    echo generatePassword();
-                }
-            ?>
-
-        </div>
 
     </div>
 
