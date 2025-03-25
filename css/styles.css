@@ -1,0 +1,224 @@
+/* CUSTOM PROPERTIES */
+:root {
+    --body-bg: #2e2d2d;
+    --font-color: #ffffff;
+    --border-color: #ff0000;
+    --card-bg: #1e1e1e;
+    --btn-bg: #ff000029;
+    --btn-bg-hover: #ff000064;
+    --home-copy-btn-hover: #6c09096b;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* LAYOUT */
+.container {
+    width: 80%;
+    height: 100vh;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--body-bg);
+    font-family: "Roboto", sans-serif;
+    color: var(--font-color);
+    font-size: 1.1rem;
+}
+
+/* FORM */
+form {
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    width: 500px;
+    background: var(--card-bg);
+    border-radius: 12px;
+}
+
+/* Form - Layout */
+a,
+.length-input,
+.repetition,
+.form-footer {
+    display: flex;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+/* Form - Password Length */
+.length-input {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-input input {
+    padding: 6px 0;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 12px;
+    font-size: inherit; 
+}
+
+/* Form - Character Repetition */
+.repetition {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Form - Character Repetition - Icons */
+.fa-solid.fa-xmark {
+    color: #ff0000;
+}
+
+.fa-solid.fa-check {
+    color: #008000;
+}
+
+.fa-solid.fa-xmark,
+.fa-solid.fa-check {
+    font-size: inherit;
+    vertical-align: middle;
+}
+
+/* Form - Character Repetition - Radio Buttons */
+.radio-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.radio-btns input {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* Form - Footer */
+.form-footer {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Form - Footer - Checkboxes */
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.checkboxes label {
+    vertical-align: middle;
+}
+
+.checkboxes label:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+.checkboxes input {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* Form - Footer - Button */
+.btn button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--btn-bg);
+    color: inherit;
+    border: 1px solid var(--border-color);
+    font-size: 1.1rem;
+    transition: background-color 0.4s ease-in-out;
+}
+
+/* Form - Footer - Button Hover */
+.btn button:hover {
+    cursor: pointer;
+    background-color: var(--btn-bg-hover);
+}
+
+/* results.php */
+/* Home Button */
+.home-btn {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    background-color: #1e1e1e;
+    transition: background-color 0.4s ease-in-out;
+}
+
+/* Home Button Hover */
+.home-btn:hover {
+    background-color: var(--home-copy-btn-hover);
+}
+
+/* Result Container */
+.result-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+/* Result Card */
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+/* Result Card - Title */
+.result-title {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+/* Result Card - End Result */
+.result {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.6rem;
+}
+
+/* Copy Button */
+.copy-btn {
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    background-color: inherit;
+    border-radius: 50%;
+    color: inherit;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.4s ease-in-out;
+}
+
+/* Copy Button Hover */
+.copy-btn:hover {
+    cursor: pointer;
+    background-color: var(--home-copy-btn-hover);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 425px) {
+    .container {
+        width: 100%;
+    }
+}
