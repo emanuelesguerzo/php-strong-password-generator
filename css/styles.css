@@ -7,6 +7,7 @@
     --btn-bg: #ff000029;
     --btn-bg-hover: #ff000064;
     --home-copy-btn-hover: #6c09096b;
+    --error-color: #ff4d4d;
 }
 
 /* RESET */
@@ -23,6 +24,7 @@
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -108,6 +110,7 @@ a,
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0;
 }
 
 /* Form - Footer - Checkboxes */
@@ -147,6 +150,17 @@ a,
     background-color: var(--btn-bg-hover);
 }
 
+/* Form - Error Message */
+.error-message {
+    color: var(--error-color);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
 /* results.php */
 /* Home Button */
 .home-btn {
@@ -155,7 +169,7 @@ a,
     display: inline-block;
     text-decoration: none;
     color: inherit;
-    background-color: #1e1e1e;
+    background-color: var(--card-bg);
     transition: background-color 0.4s ease-in-out;
 }
 

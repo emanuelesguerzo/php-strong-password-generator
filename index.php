@@ -1,10 +1,20 @@
 <?php
 session_start();
 include_once "./functions.php";
+$errorMessage = "";
 
 if (isset($_GET["length"])) {
-    $_SESSION["password"] = generatePassword();
-    header("Location: result.php");
+    $generated = generatePassword();
+
+    if (strpos($generated, "Seleziona") === 0 || strpos($generated, "Set") === 0) {
+        // Errore
+        $errorMessage = $generated;
+    } else {
+        // Valido
+        $_SESSION["password"] = $generated;
+        header("Location: result.php");
+        exit;
+    }
 }
 
 ?>
@@ -24,10 +34,10 @@ if (isset($_GET["length"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/styles.css">
-    
+
     <title>Password Generator</title>
 </head>
 
@@ -41,7 +51,7 @@ if (isset($_GET["length"])) {
             <!-- Input Length -->
             <div class="length-input">
                 <label for="length">Lunghezza password</label>
-                <input type="number" name="length" id="length" min="6" max="24" value="6">
+                <input type="number" name="length" id="length" min="6" max="24" value="6" required>
             </div>
 
             <!-- Character Repetition -->
@@ -62,7 +72,7 @@ if (isset($_GET["length"])) {
 
             <!-- Form Footer -->
             <div class="form-footer">
-                
+
                 <!-- Character Selection -->
                 <div class="checkboxes">
                     <label for="uppercase">Maiuscole
@@ -89,6 +99,13 @@ if (isset($_GET["length"])) {
 
             </div>
         </form>
+
+        <!-- Error Message -->
+        <?php if (!empty($errorMessage)) : ?>
+            <div class="error-message"><?= $errorMessage ?></div>
+        <?php endif; ?>
+
     </div>
 </body>
+
 </html>
