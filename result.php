@@ -1,6 +1,7 @@
 <?php
 session_start();
 $generatedPassword = $_SESSION["password"] ?? "Nessuna password trovata";
+$length = $_SESSION["length"] ?? "X";
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +31,7 @@ $generatedPassword = $_SESSION["password"] ?? "Nessuna password trovata";
         <div class="card">
 
             <div class="result-title">
-                <p>La tua password sicura è: </p>
+                <p>La tua password sicura di <?= $length ?> caratteri è: </p>
             </div>
 
             <!-- End Result -->
@@ -48,6 +49,7 @@ $generatedPassword = $_SESSION["password"] ?? "Nessuna password trovata";
 
     <?php
     unset($_SESSION["password"]);
+    unset($_SESSION["length"]);
     ?>
 
 </body>

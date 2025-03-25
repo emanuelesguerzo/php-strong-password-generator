@@ -12,6 +12,7 @@ if (isset($_GET["length"])) {
     } else {
         // Valido
         $_SESSION["password"] = $generated;
+        $_SESSION["length"] = $_GET["length"];
         header("Location: result.php");
         exit;
     }
