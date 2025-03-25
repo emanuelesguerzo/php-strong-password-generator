@@ -45,6 +45,12 @@ if (isset($_GET["length"])) {
 
     <div class="container">
 
+        <!-- Title Section -->
+        <div class="main-title">
+            <h1>Strong Password Generator</h1>
+            <p class="subtitle">Genera una password sicura in pochi click!</p>
+        </div>
+
         <!-- Form -->
         <form method="GET">
 

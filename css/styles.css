@@ -27,6 +27,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
 }
 
 body {
@@ -36,6 +37,14 @@ body {
     font-size: 1.1rem;
 }
 
+/* MAIN TITLE */
+.main-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
 /* FORM */
 form {
     border: 1px solid var(--border-color);
@@ -43,6 +52,7 @@ form {
     width: 500px;
     background: var(--card-bg);
     border-radius: 12px;
+    box-shadow: 0px 0px 30px 12px #00000066;
 }
 
 /* Form - Layout */
@@ -196,6 +206,7 @@ a,
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
+    box-shadow: 0px 0px 30px 12px #00000066;
 }
 
 /* Result Card - Title */
@@ -232,7 +243,19 @@ a,
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 425px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
     .container {
+        width: 100%;
+    }
+
+    form {
         width: 100%;
     }
 }
