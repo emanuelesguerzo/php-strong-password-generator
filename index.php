@@ -39,80 +39,88 @@ if (isset($_GET["length"])) {
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/styles.css">
 
+    <!-- Tab Title -->
     <title>Password Generator</title>
 </head>
 
 <body>
+    <div class="wrapper">
 
-    <div class="container">
+        <!-- Header -->
+        <header>
+            <img src="./img/boolpassword-logo.png" alt="Logo di BoolPassword">
+        </header>
 
-        <!-- Title Section -->
-        <div class="main-title">
-            <h1>Strong Password Generator</h1>
-            <p class="subtitle">Genera una password sicura in pochi click!</p>
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Form -->
+            <form method="GET">
+
+                <!-- Main Title and Subtitle -->
+                <div class="main-title">
+                    <h1>Strong Password Generator</h1>
+                    <p class="subtitle">Genera una password sicura in pochi click!</p>
+                </div>
+
+                <!-- Input Length -->
+                <div class="length-input">
+                    <label for="length">Lunghezza password</label>
+                    <input type="number" name="length" id="length" min="6" max="24" value="6" required>
+                </div>
+
+                <!-- Character Repetition -->
+                <div class="repetition">
+
+                    <p>Ripetizione dei caratteri</p>
+
+                    <div class="radio-btns">
+                        <label for="repeat-yes"><i class="fa-solid fa-square-check"></i>
+                            <input type="radio" name="repeat" id="repeat-yes" value="yes" checked>
+                        </label>
+                        <label for="repeat-no"><i class="fa-solid fa-square-xmark"></i>
+                            <input type="radio" name="repeat" id="repeat-no" value="no">
+                        </label>
+                    </div>
+
+                </div>
+
+                <!-- Form Footer -->
+                <div class="form-footer">
+
+                    <!-- Character Selection -->
+                    <div class="checkboxes">
+                        <label for="uppercase">Maiuscole
+                            <input type="checkbox" name="uppercase" id="uppercase" checked>
+                        </label>
+
+                        <label for="lowercase">Minuscole
+                            <input type="checkbox" name="lowercase" id="lowercase" checked>
+                        </label>
+
+                        <label for="numbers">Numeri
+                            <input type="checkbox" name="numbers" id="numbers">
+                        </label>
+
+                        <label for="symbols">Simboli
+                            <input type="checkbox" name="symbols" id="symbols">
+                        </label>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <div class="btn">
+                        <button type="submit">Genera</button>
+                    </div>
+
+                </div>
+            </form>
+
+            <!-- Error Message -->
+            <?php if (!empty($errorMessage)) : ?>
+                <div class="error-message"><?= $errorMessage ?></div>
+            <?php endif; ?>
+
         </div>
-
-        <!-- Form -->
-        <form method="GET">
-
-            <!-- Input Length -->
-            <div class="length-input">
-                <label for="length">Lunghezza password</label>
-                <input type="number" name="length" id="length" min="6" max="24" value="6" required>
-            </div>
-
-            <!-- Character Repetition -->
-            <div class="repetition">
-
-                <p>Ripetizione dei caratteri</p>
-
-                <div class="radio-btns">
-                    <label for="repeat-yes"><i class="fa-solid fa-check"></i>
-                        <input type="radio" name="repeat" id="repeat-yes" value="yes" checked>
-                    </label>
-                    <label for="repeat-no"><i class="fa-solid fa-xmark"></i>
-                        <input type="radio" name="repeat" id="repeat-no" value="no">
-                    </label>
-                </div>
-
-            </div>
-
-            <!-- Form Footer -->
-            <div class="form-footer">
-
-                <!-- Character Selection -->
-                <div class="checkboxes">
-                    <label for="uppercase">Maiuscole
-                        <input type="checkbox" name="uppercase" id="uppercase" checked>
-                    </label>
-
-                    <label for="lowercase">Minuscole
-                        <input type="checkbox" name="lowercase" id="lowercase" checked>
-                    </label>
-
-                    <label for="numbers">Numeri
-                        <input type="checkbox" name="numbers" id="numbers">
-                    </label>
-
-                    <label for="symbols">Simboli
-                        <input type="checkbox" name="symbols" id="symbols">
-                    </label>
-                </div>
-
-                <!-- Generate Button -->
-                <div class="btn">
-                    <button type="submit">Genera</button>
-                </div>
-
-            </div>
-        </form>
-
-        <!-- Error Message -->
-        <?php if (!empty($errorMessage)) : ?>
-            <div class="error-message"><?= $errorMessage ?></div>
-        <?php endif; ?>
-
     </div>
 </body>
-
 </html>

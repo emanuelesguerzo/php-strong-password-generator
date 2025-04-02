@@ -18,16 +18,20 @@
 }
 
 /* LAYOUT */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .container {
     width: 80%;
-    height: 100vh;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
 }
 
 body {
@@ -37,15 +41,31 @@ body {
     font-size: 1.1rem;
 }
 
-/* MAIN TITLE */
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: var(--card-bg);
+    padding: 10px;
+    box-shadow: 0px 0px 30px 12px #00000066;
+}
+
+header img {
+    width: 150px;
+}
+
+/* FORM */
+
 .main-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    margin-bottom: 20px;
 }
 
-/* FORM */
 form {
     border: 1px solid var(--border-color);
     padding: 25px;
@@ -53,6 +73,7 @@ form {
     background: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0px 0px 30px 12px #00000066;
+    margin-bottom: 20px;
 }
 
 /* Form - Layout */
@@ -76,9 +97,10 @@ a,
 .length-input input {
     padding: 6px 0;
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
     border-radius: 12px;
     font-size: inherit; 
+    border: none;
 }
 
 /* Form - Character Repetition */
@@ -88,11 +110,11 @@ a,
 }
 
 /* Form - Character Repetition - Icons */
-.fa-solid.fa-xmark {
+.fa-solid.fa-square-xmark {
     color: #ff0000;
 }
 
-.fa-solid.fa-check {
+.fa-solid.fa-square-check {
     color: #008000;
 }
 
@@ -113,6 +135,12 @@ a,
 .radio-btns input {
     vertical-align: middle;
     margin-left: 10px;
+}
+
+.radio-btns i,
+.radio-btns label {
+    vertical-align: middle;
+    font-size: inherit;
 }
 
 /* Form - Footer */
@@ -148,6 +176,7 @@ a,
     padding: 10px 20px;
     border-radius: 20px;
     background-color: var(--btn-bg);
+    display: inline-block;
     color: inherit;
     border: 1px solid var(--border-color);
     font-size: 1.1rem;
@@ -174,8 +203,9 @@ a,
 /* results.php */
 /* Home Button */
 .home-btn {
-    margin-top: 20px;
     margin-left: 20px;
+    width: fit-content;
+    padding: 6px 12px;
     display: inline-block;
     text-decoration: none;
     color: inherit;
@@ -194,7 +224,7 @@ a,
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    margin: 20px auto;
 }
 
 /* Result Card */
@@ -226,8 +256,8 @@ a,
 /* Copy Button */
 .copy-btn {
     font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background-color: inherit;
     border-radius: 50%;
     color: inherit;
@@ -242,7 +272,7 @@ a,
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 530px) {
     h1 {
         font-size: 1.4rem;
     }
@@ -257,5 +287,49 @@ a,
 
     form {
         width: 100%;
+    }
+
+    .checkboxes {
+        margin-bottom: 20px;
+    }
+
+    .length-input,
+    .form-footer,
+    .repetition {
+        flex-direction: column;
+    }
+
+    .length-input label,
+    .repetition p {
+        margin-bottom: 10px;
+    }
+
+    .home-btn {
+        margin-left: 10px;
+        
+    }
+
+    .card {
+    
+        padding: 20px;
+    }
+
+    .result-title {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .result {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .result .pass{
+        font-size: 1rem;
+    }
+
+    .copy-btn {
+        margin-bottom: 0;
+
     }
 }
